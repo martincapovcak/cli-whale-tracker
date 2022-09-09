@@ -1,0 +1,7 @@
+{
+  "name": "whale-tracker",
+  "version": "1.0.1-0",
+  "bin": {
+    "whale-tracker": "index.js"
+  }
+}

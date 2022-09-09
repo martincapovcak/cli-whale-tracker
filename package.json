@@ -1,6 +1,6 @@
 {
 	"name": "whale-tracker",
-	"version": "1.0.1-1",
+	"version": "1.0.1-2",
 	"description": "CLI for listening to whale activity in the ocean of a blockchain via `npx whale-tracker`",
 	"bin": {
 		"whale-tracker": "index.js"

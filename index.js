@@ -1,9 +1,19 @@
 #!/usr/bin/env node
 
+//Dependencies
+
+//Imports
+const pkgJSON = require('./package.json');
+
 console.clear();
+
+console.log(`
+Name: ${pkgJSON.name}
+Version: ${pkgJSON.version}
+Description: ${pkgJSON.description}
+`);
+
 console.log(`
 Whale Tracker
-
-CLI for listening to whale activity in the ocean of a blockchain.
 
 `);

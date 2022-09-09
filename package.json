@@ -1,27 +1,27 @@
 {
-  "name": "whale-tracker",
-  "version": "1.0.1-1",
-  "description": "CLI for listening to whale activity in the ocean of a blockchain via `npx whale-tracker`",
-  "bin": {
-    "whale-tracker": "index.js"
-  },
-  "keywords": [
-    "whale activity",
-    "whale",
-    "tracker",
-    "blockchain"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "repository": "martincapovcak/cli-whale-tracket",
-  "author": {
-    "name": "Martin Capovcak",
-    "email": "martin.capovcak@gmail.com"
-  },
-  "dependencies": {
-    "chalk": "^4.0.0"
-  },
-  "devDependencies": {
-    "prettier": "^2.7.1"
-  }
+	"name": "whale-tracker",
+	"version": "1.0.1-1",
+	"description": "CLI for listening to whale activity in the ocean of a blockchain via `npx whale-tracker`",
+	"bin": {
+		"whale-tracker": "index.js"
+	},
+	"keywords": [
+		"whale activity",
+		"whale",
+		"tracker",
+		"blockchain"
+	],
+	"license": "MIT",
+	"main": "index.js",
+	"repository": "martincapovcak/cli-whale-tracket",
+	"author": {
+		"name": "Martin Capovcak",
+		"email": "martin.capovcak@gmail.com"
+	},
+	"dependencies": {
+		"chalk": "^4.0.0"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1"
+	}
 }

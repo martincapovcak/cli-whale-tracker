@@ -1,19 +1,28 @@
 #!/usr/bin/env node
 
 //Dependencies
+const chalk = require('chalk');
 
 //Imports
 const pkgJSON = require('./package.json');
 
+//Constants
+const log = console.log;
+const bold = chalk.bold;
+const dim = chalk.dim;
+const line = () => log('---------------------------');
+
 console.clear();
 
-console.log(`
-Name: ${pkgJSON.name}
-Version: ${pkgJSON.version}
-Description: ${pkgJSON.description}
+log(`
+Name        : ${bold(pkgJSON.name)}
+Version     : ${bold(pkgJSON.version)}
+Description : ${pkgJSON.description}
 `);
 
-console.log(`
+line();
+
+log(`
 Whale Tracker
 
 `);

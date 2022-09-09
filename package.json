@@ -17,5 +17,11 @@
   "author": {
     "name": "Martin Capovcak",
     "email": "martin.capovcak@gmail.com"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }

@@ -10,5 +10,12 @@
     "whale",
     "tracker",
     "blockchain"
-  ]
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "martincapovcak/whale-tracker",
+  "author": {
+    "name": "Martin Capovcak",
+    "email": "martin.capovcak@gmail.com"
+  }
 }

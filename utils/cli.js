@@ -5,8 +5,8 @@ Usage
     $ npx whale-tracker [options]
 
 Options
-    --default   Default search
-    --config    Custom your search
+    -d --default   Default search
+    -c --config    Custom your search
 
 Examples
     $ npx whale-tracker --config
@@ -15,11 +15,13 @@ const options = {
 	flags: {
 		default: {
 			type: 'boolean',
-			default: false
+			default: false,
+			alias: 'd'
 		},
 		config: {
 			type: 'boolean',
-			default: false
+			default: false,
+			alias: 'c'
 		},
 		head: {
 			type: 'boolean',

@@ -13,7 +13,7 @@
 	],
 	"license": "MIT",
 	"main": "index.js",
-	"repository": "martincapovcak/cli-whale-tracket",
+	"repository": "martincapovcak/cli-whale-tracker",
 	"author": {
 		"name": "Martin Capovcak",
 		"email": "martin.capovcak@gmail.com"

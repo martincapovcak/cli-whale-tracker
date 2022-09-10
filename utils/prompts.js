@@ -2,6 +2,12 @@
 const prompts = require('prompts')
 const { tokens } = require('../data/dummy-data')
 
+const defaultResponse = {
+	token: tokens.usdc.address,
+	treshold: 100000,
+	value: true
+}
+
 const questions = [
 	{
 		type: 'select',
@@ -53,9 +59,8 @@ const questions = [
 	}
 ]
 
-const getPrompts = async () => {
-	const res = await prompts(questions)
-	return res
+async function prompt() {
+	return await prompts(questions)
 }
 
-module.exports = getPrompts
+module.exports = { prompt, defaultResponse }

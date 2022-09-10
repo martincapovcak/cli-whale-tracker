@@ -1,7 +1,7 @@
 {
 	"name": "whale-tracker",
 	"version": "1.0.1-2",
-	"description": "CLI for listening to whale activity in the ocean of a blockchain via `npx whale-tracker`",
+	"description": "CLI for listening to whale activity on the ethereum blockchain.",
 	"bin": {
 		"whale-tracker": "index.js"
 	},
@@ -19,6 +19,7 @@
 		"email": "martin.capovcak@gmail.com"
 	},
 	"dependencies": {
+		"meow": "^9.0.0",
 		"prompts": "^2.4.2"
 	},
 	"devDependencies": {

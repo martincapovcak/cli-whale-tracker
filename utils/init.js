@@ -1,18 +1,16 @@
 //Imports
-const pkgJSON = require('../package.json');
-const log = require('./helpers/logs');
+const pkgJSON = require('../package.json')
 
 //Constants
 const head = `
 Name        : ${pkgJSON.name}
 Version     : ${pkgJSON.version}
 Description : ${pkgJSON.description}
-`;
+`
 
-// foo
 const init = () => {
-	console.clear();
-	log(head);
-};
+	console.clear()
+	console.log(head)
+}
 
-module.exports = init;
+module.exports = init

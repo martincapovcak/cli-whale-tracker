@@ -1,6 +1,6 @@
 //Dependencies
 const prompts = require('prompts')
-const {tokens} = require('../data/dummy-data')
+const { tokens } = require('../data/dummy-data')
 
 const questions = [
 	{
@@ -8,9 +8,9 @@ const questions = [
 		name: 'token',
 		message: 'Which token you want to track?',
 		choices: [
-			{title: 'USDC', value: tokens.usdc.address},
-			{title: 'USDT', value: tokens.usdt.address},
-			{title: 'DAI', value: tokens.dai.address},
+			{ title: 'USDC', value: tokens.usdc.address },
+			{ title: 'USDT', value: tokens.usdt.address },
+			{ title: 'DAI', value: tokens.dai.address },
 			{
 				title: 'Other',
 				description: 'You will need to paste token contract address',
@@ -29,10 +29,10 @@ const questions = [
 		name: 'treshold',
 		message: 'Choose a whale transfer size.',
 		choices: [
-			{title: '100,000', value: 100000},
-			{title: '1,000,000', value: 1000000},
-			{title: '10,000,000', value: 10000000},
-			{title: 'Other', value: false}
+			{ title: '100,000', value: 100000 },
+			{ title: '1,000,000', value: 1000000 },
+			{ title: '10,000,000', value: 10000000 },
+			{ title: 'Other', value: false }
 		],
 		initial: 0
 	},
@@ -54,8 +54,7 @@ const questions = [
 ]
 
 const getPrompts = async () => {
-	const onSubmit = (prompt, answer) => console.log(`Thanks I got: ${answer}`)
-	const res = await prompts(questions, {onSubmit})
+	const res = await prompts(questions)
 	return res
 }
 

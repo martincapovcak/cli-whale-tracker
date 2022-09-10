@@ -9,6 +9,7 @@ const pkgJSON = require('./package.json')
 const init = require('./utils/init')
 const log = require('./utils/helpers/logs')
 const getPrompts = require('./utils/prompts.js')
+const { formatPrice } = require('./utils/helpers/format-price')
 
 //Constants
 const args = process.argv.slice(2)
@@ -26,7 +27,7 @@ const args = process.argv.slice(2)
 	if (response.value) {
 		log('-------------------------')
 		log(`Coin: ${'Token Name'}`) // place token name from chain here
-		log(`Treshold: ${response.treshold}`)
+		log(`Treshold: ${formatPrice(response.treshold)}`)
 		log('-------------------------')
 	}
 })() // IFIE foo

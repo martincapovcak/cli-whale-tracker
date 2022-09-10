@@ -1,6 +1,7 @@
 //Dependencies
 const prompts = require('prompts')
 const { tokens } = require('../data/dummy-data')
+const ethers = require('ethers')
 
 const defaultResponse = {
 	token: tokens.usdc.address,
@@ -28,12 +29,13 @@ const questions = [
 	{
 		type: prev => (prev == false ? 'text' : null),
 		name: 'token',
-		message: 'Paste in a token contract address: '
+		message: 'Paste in a token contract address. ',
+		validate: address => (ethers.utils.isAddress(address) ? true : `Address is not valid`)
 	},
 	{
 		type: 'select',
 		name: 'treshold',
-		message: 'Choose a whale transfer size.',
+		message: 'Choose a whale transfer size:',
 		choices: [
 			{ title: '100,000', value: 100000 },
 			{ title: '1,000,000', value: 1000000 },
@@ -45,8 +47,8 @@ const questions = [
 	{
 		type: prev => (prev == false ? 'number' : null),
 		name: 'treshold',
-		message: 'What minimal transfer you want listen to?',
-		validate: value => (value < 10 ? `Minimal value is to low` : true),
+		message: 'Set minimal coin transfer you want listen to:',
+		validate: value => (value < 10 ? `Minimal value as a whale transaction is to low` : true),
 		initial: 10000
 	},
 	{

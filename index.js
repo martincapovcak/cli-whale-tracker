@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+/**
+ * whale-tracker
+ * CLI to listen whale activity on a eth blockchain
+ */
+
 //Dependencies
 
 //Build-in modules

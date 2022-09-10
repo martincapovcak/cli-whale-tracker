@@ -17,11 +17,16 @@ const args = process.argv.slice(2)
 ;(async () => {
 	init()
 
-	log('Whale Tracker')
-
+	log('Quick setup: \n')
 	const response = await getPrompts()
+	console.clear()
 
-	if (response) {
-		console.log(response)
+	log('>_\n')
+	log('Welcome to whale tracker \n')
+	if (response.value) {
+		log('-------------------------')
+		log(`Coin: ${'Token Name'}`) // place token name from chain here
+		log(`Treshold: ${response.treshold}`)
+		log('-------------------------')
 	}
 })() // IFIE foo

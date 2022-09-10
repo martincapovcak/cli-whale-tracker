@@ -1,28 +1,17 @@
 #!/usr/bin/env node
 
 //Dependencies
-const chalk = require('chalk');
 
 //Imports
 const pkgJSON = require('./package.json');
+const init = require('./utils/init');
+const log = require('./utils/helpers/logs');
 
 //Constants
-const log = console.log;
-const bold = chalk.bold;
-const dim = chalk.dim;
-const line = () => log('---------------------------');
 
-console.clear();
+// Logic
+(() => {
+	init();
 
-log(`
-Name        : ${bold(pkgJSON.name)}
-Version     : ${bold(pkgJSON.version)}
-Description : ${pkgJSON.description}
-`);
-
-line();
-
-log(`
-Whale Tracker
-
-`);
+	log('Whale Tracker');
+})(); // IFIE foo

@@ -18,9 +18,7 @@
 		"name": "Martin Capovcak",
 		"email": "martin.capovcak@gmail.com"
 	},
-	"dependencies": {
-		"chalk": "^4.0.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"prettier": "^2.7.1"
 	}

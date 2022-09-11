@@ -6,7 +6,7 @@ const formatPrice = _num => {
 
 // Get price from smart contract BigNumber and format it as "en-US"
 const formatPriceBigNumber = (_num, _decimals) => {
-	let price = _num / `1e${_decimals}`
+	let price = _num.toString() / `1e${_decimals}`
 
 	const USformatedPrice = Intl.NumberFormat('en-US', { style: 'decimal' })
 	return USformatedPrice.format(price.toFixed(2))

@@ -33,14 +33,15 @@ const sonar = async (whaleActivity = {}) => {
 	console.log('\n')
 
 	contract.on('Transfer', (from, to, value, data) => {
-		if (value.toNumber() >= transfer_treshold) {
+		const bigIntValue = BigInt(value)
+		const bigIntTreshold = BigInt(transfer_treshold)
+		if (bigIntValue >= bigIntTreshold) {
 			playSound('./assets/sound/whale.mp3')
-			const amount = value.toNumber()
-			console.log('---------------------------')
 			console.log('Whale detected')
-			console.log(`-> ${formatPriceBigNumber(amount, decimals)} ${tokenName}s`)
+			console.log(`-> ${formatPriceBigNumber(bigIntValue, decimals)} ${tokenName}s`)
 			//console.log(`-> to: ${to}`)
 			console.log(`-> tx: https://etherscan.io/tx/${data.transactionHash}`)
+			console.log('---------------------------')
 		}
 	})
 

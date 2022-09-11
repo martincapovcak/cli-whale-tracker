@@ -3,6 +3,8 @@ const prompts = require('prompts')
 const { tokens } = require('../data/dummy-data')
 const ethers = require('ethers')
 
+const playSound = require('./helpers/play-sound.js')
+
 const defaultResponse = {
 	token: tokens.usdc.address,
 	treshold: 100000,
@@ -62,7 +64,9 @@ const questions = [
 ]
 
 async function prompt() {
-	return await prompts(questions)
+	const onSubmit = (prompt, answer) => playSound('./assets/sound/beep.mp3')
+	const onCancel = prompt => playSound('./assets/sound/click-beep.mp3')
+	return await prompts(questions, { onSubmit, onCancel })
 }
 
 module.exports = { prompt, defaultResponse }

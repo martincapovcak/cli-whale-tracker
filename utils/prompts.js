@@ -49,7 +49,7 @@ const questions = [
 		name: 'treshold',
 		message: 'Set minimal coin transfer you want listen to:',
 		validate: value => (value < 10 ? `Minimal value as a whale transaction is to low` : true),
-		initial: 10000
+		initial: 1000
 	},
 	{
 		type: 'toggle',

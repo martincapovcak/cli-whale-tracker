@@ -1,15 +1,20 @@
 const meow = require('meow')
+const { green, yellow, cyan, bold } = require('chalk')
 
 const helpText = `
 Usage
-    $ npx whale-tracker [options]
+    ${green(`npx whale-tracker`)} ${yellow(`[--options]`)} ${cyan(`<commands>`)}
 
 Options
-    -d --default   Default search
-    -c --config    Custom your search
+    ${yellow(`-d --default`)}   Default search
+    ${yellow(`-c --config`)}    Custom search setup
+    ${yellow(`-v --version`)}   Print CLI version
+
+Commands
+    ${cyan(`help`)}           Print CLI help information
 
 Examples
-    $ npx whale-tracker --config
+    ${green(`npx whale-tracker`)} ${yellow(`--config`)}
 `
 const options = {
 	flags: {
@@ -26,8 +31,14 @@ const options = {
 		head: {
 			type: 'boolean',
 			default: true
+		},
+		version: {
+			type: 'boolean',
+			default: false,
+			alias: 'v'
 		}
-	}
+	},
+	description: false
 }
 
 module.exports = meow(helpText, options)

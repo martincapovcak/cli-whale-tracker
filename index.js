@@ -17,10 +17,15 @@ const sonar = require('./utils/sonar.js')
 
 //Constants
 //const args = process.argv.slice(2)
+const input = cli.input
+const flags = cli.flags
 
 // Logic
 ;(async () => {
 	init()
+	input.includes('help') && cli.showHelp(0)
+
+	// temp logs
 	console.log('cli', cli.input)
 	console.log('cli', cli.flags)
 

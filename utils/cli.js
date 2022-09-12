@@ -38,7 +38,8 @@ const options = {
 			alias: 'v'
 		}
 	},
-	description: false
+	description: false,
+	hardRejection: false
 }
 
 module.exports = meow(helpText, options)

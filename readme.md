@@ -36,13 +36,13 @@ npx whale-tracker help
 Output:
 
 ```
-    USAGE    npx whale-tracker [--options] <inputs>
+    USAGE       npx whale-tracker [--options] <commands>
 
-    OPTIONS  -d --default   Run sonar with default setup
-             -c --config    Run sonar with custom setup
-             -v --version   Print CLI version
+    OPTIONS     -d --default   Run sonar with default setup
+                -c --config    Run sonar with custom setup
+                -v --version   Print CLI version
 
-    INPUTS   help
+    COMMANDS    help
 
-    EAMPLE   npx whale-tracker -c
+    EAMPLE      npx whale-tracker -c
 ```

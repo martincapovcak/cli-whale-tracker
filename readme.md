@@ -4,6 +4,8 @@
 
 > Listening to whale activity on the Ethereum blockchain with your comand line and Node.js
 
+---
+
 ## Setup
 
 Check for your NodeJS version.
@@ -12,6 +14,11 @@ Recommended version: v14.20.0
 ```sh
 $ node -v
 ```
+
+1. _If you don't have NodeJS installed follow the instructions [here](https://nodejs.org/en/)._
+2. \_For managing Node.js version look for "[n](https://www.npmjs.com/package/n)"
+
+---
 
 ## Usage
 

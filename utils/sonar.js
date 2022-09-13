@@ -28,7 +28,7 @@ const sonar = async (whaleActivity = {}) => {
 		console.clear()
 
 		console.log(green.bold('\n>_\n'))
-		console.log('Sonar is spinning-up..')
+		console.log('Sonar is up and running..')
 		console.log('->')
 		console.log(`-> Listening for ${tokenName} whales.`)
 		console.log(`-> Treshold: ${formatPrice(whaleActivity.treshold)} ${tokenName}s`)
@@ -55,9 +55,10 @@ const sonar = async (whaleActivity = {}) => {
 			playSound(soundFx.sonar)
 
 			if (counter > 0) {
-				console.log('Whales spoted:', yellow(counter))
-				console.log('\n')
+				console.log(`>>> ${bold(counter)} whale${counter == 1 ? '' : 's'} spotted\n`)
 				counter = 0
+			} else {
+				console.log('~')
 			}
 		}, 10000)
 	} catch (err) {

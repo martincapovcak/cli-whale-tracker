@@ -29,19 +29,27 @@ unhandled()
 // Logic
 ;(async () => {
 	init()
+	alert({ type: 'info', msg: '--help' })
 
 	input.includes('help') && cli.showHelp(0)
 
 	// Spinn-up sonar with default setings
-	cli.flags.default && (await sonar(defaultResponse))
+	flags.default && (await sonar(defaultResponse))
 
 	// Prompt user
-	if (cli.flags.config) {
+	if (flags.config) {
 		let response = await prompt()
-		!response.value && process.exit()
+		if (!response.value) {
+			alert({ type: 'error', msg: 'you didnt confirm data' })
+			process.exit()
+		}
 		// Spinn-up sonar with default setings
-		response.token && response.treshold
-			? await sonar(response)
-			: console.log('Oops.. someting went wrong.')
+		if (response.token && response.treshold) {
+			//console.log('\n-> Heating-up..\n')
+			alert({ type: 'success', msg: 'Heating-up..' })
+			await sonar(response)
+		} else {
+			console.log('Oops.. someting went wrong.')
+		}
 	}
 })()

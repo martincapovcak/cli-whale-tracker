@@ -41,6 +41,6 @@ module.exports = options => {
 	}
 
 	if (type === `info`) {
-		log(`\n${sym.info} ${chalk.blueBright.bold(` ${printName}: `)} ${chalk.blue(msg)}\n`)
+		log(`\n${chalk.bold(`${printName}: `)}${msg}\n`)
 	}
 }

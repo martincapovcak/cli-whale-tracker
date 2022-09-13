@@ -6,8 +6,8 @@ Usage
     ${green(`npx whale-tracker`)} ${yellow(`[--options]`)} ${cyan(`<commands>`)}
 
 Options
-    ${yellow(`-d --default`)}   Default search
-    ${yellow(`-c --config`)}    Custom search setup
+    ${yellow(`-d --default`)}   Run sonar with default setup
+    ${yellow(`-c --config`)}    Run sonar with custom setup
     ${yellow(`-v --version`)}   Print CLI version
 
 Commands

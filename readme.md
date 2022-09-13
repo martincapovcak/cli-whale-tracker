@@ -33,6 +33,8 @@ npx whale-tracker
 npx whale-tracker help
 ```
 
+Output:
+
 ```
     USAGE    npx whale-tracker [--options] <inputs>
 

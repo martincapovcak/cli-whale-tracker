@@ -20,7 +20,6 @@ const handleError = require('./utils/helpers/handle-errors')
 const unhandled = require('./utils/helpers/handle-unhandled.js')
 
 //Constants
-//const args = process.argv.slice(2)
 const input = cli.input
 const flags = cli.flags
 
@@ -33,22 +32,16 @@ unhandled()
 
 	input.includes('help') && cli.showHelp(0)
 
-	// temp logs
-	//console.log('cli', cli.input)
-	//console.log('cli', cli.flags)
+	// Spinn-up sonar with default setings
+	cli.flags.default && (await sonar(defaultResponse))
 
-	if (cli.flags.default) {
-		await sonar(defaultResponse)
-	}
-
+	// Prompt user
 	if (cli.flags.config) {
 		let response = await prompt()
-		if (response.token && response.treshold && response.value) {
-			await sonar(response)
-		} else {
-			console.log('Wrong input')
-		}
+		!response.value && process.exit()
+		// Spinn-up sonar with default setings
+		response.token && response.treshold
+			? await sonar(response)
+			: console.log('Oops.. someting went wrong.')
 	}
-
-	// continue programm
-})() // IFIE foo
+})()

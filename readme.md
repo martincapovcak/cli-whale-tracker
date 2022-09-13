@@ -9,30 +9,31 @@
 ## Setup
 
 Check for your NodeJS version.
-Recommended version: v14.20.0
+_Recommended version: v14.20.0_
 
 ```sh
-$ node -v
+node -v
 ```
 
 1. _If you don't have NodeJS installed follow the instructions [here](https://nodejs.org/en/)._
-2. \_For managing Node.js version look for "[n](https://www.npmjs.com/package/n)"
+
+2. _For managing Node.js version look for "[n](https://www.npmjs.com/package/n)"_
 
 ---
 
 ## Usage
 
 ```sh
-$ npx whale-tracker
+npx whale-tracker
 ```
 
 ### Commands Pallete
 
 ```sh
-$ npx whale-tracker help
+npx whale-tracker help
 ```
 
-```sh
+```
     USAGE    npx whale-tracker [--options] <inputs>
 
     OPTIONS  -d --default   Run sonar with default setup

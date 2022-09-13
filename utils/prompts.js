@@ -56,7 +56,7 @@ const questions = [
 	{
 		type: 'toggle',
 		name: 'value',
-		message: 'Can you confirm?',
+		message: 'Turn-on sonar to start listening?',
 		initial: true,
 		active: 'yes',
 		inactive: 'no'

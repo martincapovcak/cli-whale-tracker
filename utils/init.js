@@ -1,6 +1,7 @@
 //Imports
 const chalk = require('chalk')
 const pkgJSON = require('../package.json')
+const alert = require('./helpers/alerts.js')
 
 //Constants
 const head = `
@@ -13,6 +14,7 @@ const init = () => {
 	console.clear()
 	console.log(chalk.green.bold('\n>_\n'))
 	console.log(head)
+	alert({ type: 'info', msg: 'npx whale-tracker --help' })
 }
 
 module.exports = init

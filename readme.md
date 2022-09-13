@@ -1,6 +1,6 @@
 `npx whale-tracker`
 
-> Listening to whale activity in a blockchain with your comand line and Node.js
+> Listening to whale activity on the Ethereum blockchain with your comand line and Node.js
 
 ## Usage
 

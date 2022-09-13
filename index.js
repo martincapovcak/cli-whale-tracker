@@ -24,13 +24,14 @@ const input = cli.input
 const flags = cli.flags
 
 unhandled()
+const promptConfirmErr = new Error('CONFIRMATION_REQUIRED')
 //Promise.reject(new Error('THIS_IS_UNHANDLED'))
 
 // Logic
 ;(async () => {
 	init()
-	alert({ type: 'info', msg: '--help' })
 
+	// Show help
 	input.includes('help') && cli.showHelp(0)
 
 	// Spinn-up sonar with default setings
@@ -39,17 +40,9 @@ unhandled()
 	// Prompt user
 	if (flags.config) {
 		let response = await prompt()
-		if (!response.value) {
-			alert({ type: 'error', msg: 'you didnt confirm data' })
-			process.exit()
-		}
-		// Spinn-up sonar with default setings
-		if (response.token && response.treshold) {
-			//console.log('\n-> Heating-up..\n')
-			alert({ type: 'success', msg: 'Heating-up..' })
-			await sonar(response)
-		} else {
-			console.log('Oops.. someting went wrong.')
-		}
+		!response.value && handleError(`SONAR WASN'T ENABLED`, promptConfirmErr, false, true)
+		// Spinn-up sonar with custom settings
+		alert({ type: 'success', msg: 'Heating-up..' })
+		await sonar(response)
 	}
 })()

@@ -5,6 +5,8 @@ const { ethers, Contract } = require('ethers')
 const getJson = require('./helpers/getJson.js')
 const { formatPriceBigNumber } = require('./helpers/format-price.js')
 const playSound = require('./helpers/play-sound.js')
+const handleError = require('./helpers/handle-errors.js')
+
 const { RPC_URL } = require('../constants/rpc.config.js')
 const { soundFx } = require('../constants/sounds.config.js')
 
@@ -30,7 +32,7 @@ const sonar = async (whaleActivity = {}) => {
 		console.log(green.bold('\n>_\n'))
 		console.log('Sonar is up and running..')
 		console.log('->')
-		console.log(`-> Listening for ${tokenName} whales.`)
+		console.log(`-> Listening for ${tokenName} whales`)
 		console.log(`-> Treshold: ${formatPrice(whaleActivity.treshold)} ${tokenName}s`)
 		console.log('-------------------------')
 		console.log('\n')
@@ -61,8 +63,8 @@ const sonar = async (whaleActivity = {}) => {
 				console.log('~')
 			}
 		}, 10000)
-	} catch (err) {
-		console.log('Opps someting went wrong.', err)
+	} catch (error) {
+		handleError(`SONAR FAILED`, error, false, true)
 	}
 }
 

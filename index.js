@@ -19,6 +19,8 @@ const unhandled = require('./utils/helpers/handle-unhandled.js')
 const input = cli.input
 const flags = cli.flags
 
+global.APP_ROOT = __dirname
+
 unhandled()
 const promptConfirmErr = new Error('CONFIRMATION_REQUIRED')
 //Promise.reject(new Error('THIS_IS_UNHANDLED'))

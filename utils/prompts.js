@@ -64,8 +64,8 @@ const questions = [
 ]
 
 async function prompt() {
-	const onSubmit = (prompt, answer) => playSound('./assets/sound/beep.mp3')
-	const onCancel = prompt => playSound('./assets/sound/click-beep.mp3')
+	const onSubmit = (prompt, answer) => playSound(`${APP_ROOT}/assets/sound/beep.mp3`)
+	const onCancel = prompt => playSound(`${APP_ROOT}/assets/sound/click-beep.mp3`)
 	return await prompts(questions, { onSubmit, onCancel })
 }
 

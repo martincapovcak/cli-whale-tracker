@@ -13,6 +13,7 @@ Description : ${pkgJSON.description}
 const init = () => {
 	console.clear()
 	console.log(chalk.green.bold('\n>_\n'))
+	console.log('Root: ', APP_ROOT)
 	console.log(head)
 	alert({ type: 'info', msg: 'npx whale-tracker --help' })
 }

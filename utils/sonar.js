@@ -8,13 +8,12 @@ const playSound = require('./helpers/play-sound.js')
 const handleError = require('./helpers/handle-errors.js')
 
 const { RPC_URL } = require('../constants/rpc.config.js')
-const { soundFx } = require('../constants/sounds.config.js')
 
 const rpcURL = RPC_URL
 const provider = new ethers.providers.JsonRpcProvider(rpcURL)
 
 const sonar = async (whaleActivity = {}) => {
-	const CONTRACT_ABI = getJson('./data/dummy_abi.json')
+	const CONTRACT_ABI = getJson(`${APP_ROOT}/data/dummy_abi.json`)
 	const CONTRACT_ADDRESS = whaleActivity.token
 	let transfer_treshold = whaleActivity.treshold
 
@@ -37,13 +36,13 @@ const sonar = async (whaleActivity = {}) => {
 		console.log('-------------------------')
 		console.log('\n')
 
-		playSound(soundFx.sonar)
+		playSound(`${APP_ROOT}/assets/sound/sonar-ping.mp3`)
 
 		contract.on('Transfer', (from, to, value, data) => {
 			const bigIntValue = BigInt(value)
 			const bigIntTreshold = BigInt(transfer_treshold)
 			if (bigIntValue >= bigIntTreshold) {
-				playSound(soundFx.whale)
+				playSound(`${APP_ROOT}/assets/sound/whale.mp3`)
 				counter++
 
 				console.log(bold('Whale detected'))
@@ -54,7 +53,7 @@ const sonar = async (whaleActivity = {}) => {
 		})
 
 		setInterval(() => {
-			playSound(soundFx.sonar)
+			playSound(`${APP_ROOT}/assets/sound/sonar-ping.mp3`)
 
 			if (counter > 0) {
 				console.log(`>>> ${bold(counter)} whale${counter == 1 ? '' : 's'} spotted\n`)

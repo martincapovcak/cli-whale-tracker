@@ -5,7 +5,6 @@
  * Works on macOS, Linux and Windows.
  * Alerts: `success`, `info`, `warrning`, `error`
  *
- * author: Martin Capovcak
  */
 
 const chalk = require('chalk')

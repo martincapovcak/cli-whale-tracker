@@ -5,10 +5,6 @@
  * CLI to listen whale activity on a eth blockchain
  */
 
-//Dependencies
-
-//Build-in modules
-
 //Imports
 const init = require('./utils/init.js')
 const { prompt, defaultResponse } = require('./utils/prompts.js')
